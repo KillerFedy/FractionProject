@@ -47,4 +47,16 @@ class FractionTest {
         Fraction fraction = new Fraction(2, 11);
         assertNotNull(fraction);
     }
+
+    @Test
+    void notNullNumerator() {
+        Fraction fraction = new Fraction(2, 3);
+        assertNotNull(fraction.getNumerator());
+    }
+
+    @Test
+    void notNullDenominator() {
+        Fraction fraction = new Fraction(2, 3);
+        assertNotNull(fraction.getDenominator());
+    }
 }
