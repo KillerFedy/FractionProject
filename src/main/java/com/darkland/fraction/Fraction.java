@@ -4,14 +4,16 @@ import lombok.Getter;
 
 
 @Getter
-public class Fraction implements IFraction{
+public class Fraction implements IFraction {
     private final Integer numerator;
     private final Integer denominator;
 
-    public Fraction(Integer numerator, Integer denominator) throws IllegalArgumentException {
-        if(denominator == 0)
-        {
+    public Fraction(Integer numerator, Integer denominator) {
+        if (denominator == 0) {
             throw new IllegalArgumentException("denominator must not be 0");
+        }
+        if (denominator == null || numerator == null) {
+            throw new IllegalArgumentException("numerator and denominator must not be null");
         }
         this.numerator = numerator;
         this.denominator = denominator;
@@ -52,16 +54,15 @@ public class Fraction implements IFraction{
         return this.multiply(reverseFraction);
     }
 
-    private Integer gcd(Integer a, Integer b){
-        return b == 0 ? a : gcd(b,a % b);
+    private Integer gcd(Integer a, Integer b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
-    private Integer lcm(Integer a,Integer b){
-        return a * b / gcd(a,b);
+    private Integer lcm(Integer a, Integer b) {
+        return a * b / gcd(a, b);
     }
 
-    private Fraction tryToReduceFraction(Fraction fraction)
-    {
+    private Fraction tryToReduceFraction(Fraction fraction) {
         Integer numerator = fraction.getNumerator();
         Integer denominator = fraction.getDenominator();
         Integer gcd = gcd(numerator, denominator);

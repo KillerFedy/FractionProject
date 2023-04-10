@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FractionTest {
 
     @Test
-     void plus() {
+    void plus() {
         Fraction fraction = new Fraction(2, 5);
         Fraction fraction1 = new Fraction(3, 9);
         Fraction fraction2 = fraction.plus(fraction1);
@@ -16,7 +16,7 @@ class FractionTest {
     }
 
     @Test
-     void minus() {
+    void minus() {
         Fraction fraction = new Fraction(2, 5);
         Fraction fraction1 = new Fraction(3, 9);
         Fraction fraction2 = fraction.minus(fraction1);
@@ -43,8 +43,7 @@ class FractionTest {
     }
 
     @Test
-    void notNull()
-    {
+    void notNull() {
         Fraction fraction = new Fraction(2, 11);
         assertNotNull(fraction);
     }
