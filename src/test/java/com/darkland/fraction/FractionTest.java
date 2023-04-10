@@ -59,4 +59,25 @@ class FractionTest {
         Fraction fraction = new Fraction(2, 3);
         assertNotNull(fraction.getDenominator());
     }
+
+    @Test
+    void DenominatorIsZero() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fraction fraction = new Fraction(2, 0);
+        });
+    }
+
+    @Test
+    void DenominatorIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fraction fraction = new Fraction(2, null);
+        });
+    }
+
+    @Test
+    void NumeratorIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fraction fraction = new Fraction(null, 3);
+        });
+    }
 }
