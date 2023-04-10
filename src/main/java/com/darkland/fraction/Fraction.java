@@ -9,11 +9,11 @@ public class Fraction implements IFraction {
     private final Integer denominator;
 
     public Fraction(Integer numerator, Integer denominator) {
-        if (denominator == 0) {
-            throw new IllegalArgumentException("denominator must not be 0");
-        }
         if (denominator == null || numerator == null) {
             throw new IllegalArgumentException("numerator and denominator must not be null");
+        }
+        if (denominator == 0) {
+            throw new IllegalArgumentException("denominator must not be 0");
         }
         this.numerator = numerator;
         this.denominator = denominator;
