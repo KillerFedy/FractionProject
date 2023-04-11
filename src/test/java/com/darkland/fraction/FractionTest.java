@@ -63,21 +63,21 @@ class FractionTest {
     @Test
     void denominatorIsZero() {
         assertThrows(IllegalArgumentException.class, () -> {
-            Fraction fraction = new Fraction(2, 0);
+            new Fraction(2, 0);
         });
     }
 
     @Test
     void denominatorIsNull() {
         assertThrows(IllegalArgumentException.class, () -> {
-            Fraction fraction = new Fraction(2, null);
+            new Fraction(2, null);
         });
     }
 
     @Test
     void numeratorIsNull() {
         assertThrows(IllegalArgumentException.class, () -> {
-            Fraction fraction = new Fraction(null, 3);
+            new Fraction(null, 3);
         });
     }
 }
